@@ -1,0 +1,34 @@
+$firstColor: #7C8FA5
+$secondtColor: #3e4042
+$additionalColor: #8EAFCE
+$buttonColor: #E29E21
+
+// main     
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap')
+
+*
+        margin: 0
+        padding: 0
+        box-sizing: border-box
+        font-family: 'Roboto Mono', monospace
+        font-size: 30px
+        color: #FEFDFA
+
+body
+        background: #E7F2FF
+        min-height: 100vh
+        background: linear-gradient(135deg, #E7F2FF 0%, #7C8FA5 100%)
+        box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,0.41)
+        padding: 15px
+        overflow-x: hidden
+        margin-right: calc(-1 * (100vw - 100%))
+
+.container
+        width: 1560px
+        margin: 0 auto
+
+.active
+        color: black
+        background-color: $buttonColor
+        &:hover
+                background-color: $additionalColor

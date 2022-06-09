@@ -1,0 +1,90 @@
+$firstColor: #7C8FA5
+$secondtColor: #3e4042
+$additionalColor: #8EAFCE
+$buttonColor: #E29E21
+
+.products
+        &-item
+                display: flex
+                flex-direction: column
+                padding: 20px
+                width: calc( 25% - 30px )
+                background-color: $firstColor
+                text-align: center
+                align-items: center
+                margin-top: 25px
+                border-radius: 5px
+                box-shadow: 3px 3px 12px -5px #000000
+                justify-content: space-between
+                position: relative
+                transition: all 0.5s ease-in-out
+                margin: 25px 10px 0
+                &:hover
+                        .products-item_trash
+                                opacity: 12
+                        .products-item_button
+                                display: flex
+                                opacity: 100
+                        .products-item_market
+                                display: none
+                &_image
+                        height: 200px
+                        width: 200px
+                        object-fit: contain
+                        background-color: white
+                        border-radius: 10px
+                &_button
+                        height: 50px
+                        background-color: $buttonColor
+                        border-radius: 10px
+                        padding: 10px 5px
+                        text-decoration: none
+                        color: white
+                        font-weight: 800
+                        font-size: 20px
+                        width: 60px
+                        align-items: center
+                        display: none
+                        justify-content: center
+                        margin-top: 10px
+                &_market
+                        padding: 10px
+                        height: 50px
+                        width: 60px
+                        object-fit: contain
+                        margin-top: 10px
+                        background-color: white
+                        border-radius: 10px
+                &_trash
+                        opacity: 0.2
+                        position: absolute
+                        top: 10px
+                        right: 3%
+                        padding: 5px
+                        height: 50px
+                        width: 50px
+                        transition: all 0.5s ease-in-out
+                        cursor: pointer
+                &_title
+                        font-weight: 800
+                        color: $secondtColor
+                &-price>span
+                        font-weight: 800
+                        font-size: 18px
+                        padding: 5px
+                        word-spacing: -8px
+                        &:last-child
+                                display: none
+                &-price_sale
+                        display: flex
+                        flex-direction: row-reverse
+                        span
+                                padding: 5px
+                                font-size: 18px
+                                word-spacing: -8px
+                                &:last-child
+                                        font-weight: 300
+                                        text-decoration: line-through
+                                &:first-child
+                                        font-weight: 800
+                                        color: #900

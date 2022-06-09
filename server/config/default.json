@@ -1,0 +1,10 @@
+{
+        "port" : 5000,
+        "mongoUrl" : "mongodb+srv://vadimon1000vad:2389123vaD@cluster0.fqh6m.mongodb.net/?retryWrites=true&w=majority",
+        "jwtSecret" : "DembeBart",
+        "baseUrl": "http://localhost:5000"
+}
+
+
+
+
