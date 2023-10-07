@@ -1,53 +1,75 @@
-import "./addLink.sass";
+import styles from "./AddLink.module.css";
 import { Fade } from "react-awesome-reveal";
-import { useContext, useState } from "react";
-import { useHttp } from "../../hooks/http.hook";
-import { AuthContext } from "../../context/AuthContext";
-
+import { useState } from "react";
+import { Widget, Input, Button, Alert } from "../../templates/ui";
+import useInput from "../../hooks/useInput.hook";
+import useRequest from "../../hooks/useRequestApi.hook";
+import { useAuthContext } from "../../hooks/useAuthContext.hook";
+const initInputsState = [
+  {
+    placeholder: "Url:",
+    name: "url",
+  },
+];
 
 const AddLink = () => {
-  const auth = useContext(AuthContext);
-  const { request } = useHttp();
-  const [link, setLink] = useState("");
-  const {token} = useContext(AuthContext)
+  const { token } = useAuthContext();
+  const { requestApi } = useRequest(token);
+  const { onChange, values, errors, checkState, clearState } =
+    useInput(initInputsState);
+
+  const [alertBody, setAlertBody] = useState(null);
 
   const pressHandler = async (event) => {
     try {
-      const data = await request(
-        "/api/link/addlink",
-        "POST",
-        { from: link },
-        {
-          Authorization: `Bearer ${auth.token}`,
-        }
-      );
-    } catch (e) {}
+      checkState();
+      if (!errors) {
+        return;
+      }
+      const response = await requestApi("link/addlink", "POST", { ...values });
+
+      setAlertBody(response);
+    } catch (e) {
+      setAlertBody(e);
+      console.log(e);
+    }
+    finally {
+      clearState()      
+    }
   };
 
-
   return (
-    <div className="container">
-      <div className="addForm">
-        <Fade direction="up" duration={1500}>
-          <div className="addForm-box">
-            <h2 className="addForm_title">Create new link</h2>
-            <div className="addForm-wrap">
-              <span className="addForm_label">url:</span>
-              <input
-                value={link}
-                onChange={(e) => setLink(e.target.value)}
-                type="text"
-                className="addForm_input"
-              />
+    <>
+      <div className={styles.container}>
+        <Widget>
+          <div className={styles.addForm}>
+            <div className="addForm-box">
+              <h2 className={styles.title}>Додати посилання:</h2>
+              {initInputsState &&
+                initInputsState.map((input) => {
+                  return (
+                    <Input
+                      key={input.name}
+                      placeholder={input.placeholder}
+                      name={input.name}
+                      onChange={onChange}
+                      value={values[input.name]}
+                      error={errors[input.name]}
+                    />
+                  );
+                })}
+              <div className={styles.buttonWrap}>
+                <Button onClick={pressHandler}>Створити</Button>
+              </div>
             </div>
-
-            <button onClick={pressHandler} className="addForm_button">
-              Create
-            </button>
           </div>
-        </Fade>
+        </Widget>
       </div>
-    </div>
+      <Alert
+        message={alertBody?.message}
+        type={alertBody?.status === 200 ? "success" : "error"}
+      />
+    </>
   );
 };
 export default AddLink;

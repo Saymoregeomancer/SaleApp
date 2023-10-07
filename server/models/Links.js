@@ -1,8 +1,8 @@
 const {Schema, model, Types} = require('mongoose')
-var mongoose_delete = require('mongoose-delete');
+// var mongoose_delete = require('mongoose-delete');
 
 const schema = new Schema({
-  from: {type: String, required: true},
+  from: {type: String, required: false},
   owner: {type: Types.ObjectId, ref: 'User'}
 })
 

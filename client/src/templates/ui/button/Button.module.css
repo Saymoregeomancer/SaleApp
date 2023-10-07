@@ -1,0 +1,21 @@
+.button {
+  margin-top: 20px;
+  color: var(--main-text-color);
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: var(--main-background-color);
+  border: var(--main-border);
+  transition: all 0.3s;
+  box-shadow: var(--main-box-shadow);
+  cursor: pointer;
+}
+
+.button:hover {
+  border: var(--main-border-hover);
+}
+
+.button:active {
+  box-shadow: var(--main-box-shadow-active);
+  transform: translateY(3px);
+}

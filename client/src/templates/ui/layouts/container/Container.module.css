@@ -1,0 +1,9 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  min-height: 85vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: auto;
+}

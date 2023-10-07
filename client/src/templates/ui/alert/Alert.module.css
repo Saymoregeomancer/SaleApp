@@ -1,0 +1,51 @@
+/* :root {
+    --main-background-color: #e8e8e8;
+    --main-box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+    --main-box-shadow-active: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+    --main-border: 1px solid #e8e8e8;
+    --main-border-hover: 1px solid white;
+    --main-text-color: #090909;
+    --main-error-color: #EF2850;
+  }
+ */
+
+.container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  border: solid 1px;
+  border-radius: 1rem;
+  box-shadow: 4px 4px 12px var(--second-background-color),
+    -4px -4px 12px var(--second-background-color);
+  background-color: var(--second-background-color);
+  overflow: hidden;
+}
+
+.wrap {
+  padding: 8px 10px;
+  min-height: 4rem;
+  width: 16rem;
+  background-color: transparent;
+}
+
+.error {
+  border-color: var(--main-error-color);
+  background-color: var(--main-error-color);
+}
+
+.error div {
+  color: var(--main-error-color);
+  background-color: var(--second-background-color);
+  opacity: 0.9;
+}
+
+.success {
+  border-color: var(--main-success-color);
+  background-color: var(--main-success-color);
+}
+
+.success div {
+  color: var(--main-success-color) !important;
+  background-color: var(--second-background-color);
+  opacity: 0.9;
+}

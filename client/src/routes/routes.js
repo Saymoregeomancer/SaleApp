@@ -1,21 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AllProducts from "../pages/AllProducts";
-import CreateLink from "../pages/CreateLink";
-import AuthPage from "../pages/AuthPage";
-import Navigation from "../components/navigation/Navigation";
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { AuthPage, CreateLinkPage, ProductsPage } from "../templates/pages";
+
+import {Navigation} from "../components/";
+
+import { useAuthContext } from "../hooks/useAuthContext.hook";
 
 const AppsRoutes = () => {
-  const isAuth = useContext(AuthContext);
+  const { isAuthenticated } = useAuthContext();
 
-  if (isAuth.isAuthenticated) {
+  if (isAuthenticated) {
     return (
       <Router>
         <Navigation></Navigation>
         <Routes>
-          <Route path="/allProducts" element={<AllProducts />} />
-          <Route path="/createLink" element={<CreateLink></CreateLink>} />
+          <Route path="/allProducts" element={<ProductsPage />} />
+          <Route path="/createLink" element={<CreateLinkPage />} />
         </Routes>
       </Router>
     );

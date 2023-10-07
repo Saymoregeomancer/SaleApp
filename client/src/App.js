@@ -1,26 +1,15 @@
 import AppsRoutes from "./routes/routes";
 import "./appStyle.sass";
-import { useAuth } from "./hooks/auth.hook";
-import { AuthContext } from "./context/AuthContext";
+
+import { AuthContextProvider } from "./hooks/useAuthContext.hook";
 
 function App() {
-  const { token, login, logout, userId } = useAuth();
-
-  const isAuthenticated = !!token;
-  // console.log('app',isAuthenticated);
-
   return (
-    <AuthContext.Provider
-      value={{
-        token,
-        login,
-        logout,
-        userId,
-        isAuthenticated,
-      }}
-    >
-      <AppsRoutes/>
-    </AuthContext.Provider>
+    <AuthContextProvider>
+      <AppsRoutes />
+      <div id="modal-root"></div>
+      <div id="fixed-root"></div>
+    </AuthContextProvider>
   );
 }
 

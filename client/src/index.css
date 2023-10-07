@@ -1,0 +1,51 @@
+:root {
+  --main-background-color: #e8e8e8;
+  --second-background-color: #e0e0e0;
+  --green-background-color: #d1e2d4;
+
+  --main-error-color: #ef2850;
+  --main-success-color: #298c3a;
+
+  --additional-color-1:rgb(0, 183, 255);
+  --additional-color-2:rgb(255, 48, 255);
+
+  --additional-grey-color-1:#CFCFCF;
+  --additional-grey-color-2:#F5F5F5;
+  --additional-grey-color-3:#696969;
+  --additional-grey-color-4:#A8A8A8;
+
+  --main-box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+  --main-box-shadow-active: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+  --main-border: 1px solid #e8e8e8;
+  --main-border-hover: 1px solid white;
+  --main-text-color: #090909;
+
+  --main-animte-opacity : opacity 0.3s linear
+
+
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 99vh;
+  width: 100%;
+  background-color: var(--main-background-color);
+  overflow: hidden;
+}
+
+
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
