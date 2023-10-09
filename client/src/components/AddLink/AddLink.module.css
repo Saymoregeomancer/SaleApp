@@ -1,0 +1,23 @@
+.container {
+  margin: 16px 8px;
+  height: 20rem;
+}
+
+.addForm {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: var(--main-text-color);
+}
+
+.buttonWrap {
+  display: flex;
+  justify-content: center;
+}
