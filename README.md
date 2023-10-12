@@ -19,9 +19,9 @@ You have now subscribed to this product. When you revisit the "Products" tab in 
 Тепер ви підписались на цей товар. Коли ви знову зайдете на вкладку "Продукти" в додатку, система буде перевіряти, чи є актуальна інформація про цей товар, включаючи наявність знижок та їх розмір.
 
 After executing the command:
-
+```bsh
 git clone https://github.com/Saymoregeomancer/SaleApp.git
-
+```
 You will have two folders: 'client' and 'server.' You need to navigate into each folder and install packages:
 
 For the server:
