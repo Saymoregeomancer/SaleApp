@@ -1,8 +1,40 @@
-# saleApp
+# SaleApp
+This is an application that allows you to subscribe to a specific product. Here's how it works:
+  1. You visit the website of a supermarket chain.
+  2. Then, you navigate to the online store (the app also offers the option of direct redirection to your chosen store).
+  3. You search for the product you need.
+  4. Once you find the product of interest, you copy the link to it.
+  5. Next, you paste the link into the corresponding field within the app.
+  6. After that, you click the "Subscribe" button.
+You have now subscribed to this product. When you revisit the "Products" tab in the app, the system will verify and provide you with updated information, including any available discounts and their amounts."
 
 
-This is a SPA for tracking discounts on a specific product (for now, it works only with zakaz.atbmarket.com/ other stores in the future).
-After registration (using a simple JWT - token), you copy the link to the product in the official store and paste it on the add product page and confirm. After that, it will be on the main page with other products, then you can see if there is a discount on your products and whether it is worth going to the store.
-Technology stack: MERN
+Це додаток, який дозволяє вам оформити підписку на певний товар. Як це працює:
+  1. Ви заходите на сайт мережі супермаркетів.
+  2. Потім переходите на онлайн магазин (в додатку також є можливість прямої переадресації на обраний вами магазин).
+  3. Ви шукаєте потрібний товар.
+  4. Коли ви знаходите товар, який вас цікавить, ви копіюєте посилання на цей товар.
+  5. Потім вставляєте посилання в відповідне поле в додатку.
+  6. Після цього натискаєте кнопку "Підписатись".
+Тепер ви підписались на цей товар. Коли ви знову зайдете на вкладку "Продукти" в додатку, система буде перевіряти, чи є актуальна інформація про цей товар, включаючи наявність знижок та їх розмір.
 
-To start, enter the command "npm install" in the root folder, then wait until all dependencies are installed, in the same folder to start, use the command "npm start". After that, the front-end and back-end will start
+After executing the command:
+
+git clone https://github.com/Saymoregeomancer/SaleApp.git
+
+You will have two folders: 'client' and 'server.' You need to navigate into each folder and install packages:
+
+For the server:
+```bash
+cd server
+npm install
+npm start
+```
+
+For the client:
+```bash
+cd client
+npm install
+npm start
+# or
+npm run build
